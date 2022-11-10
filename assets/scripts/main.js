@@ -25,7 +25,7 @@ async function init() {
     console.error(err);
   }
 
-  console.log(recipes);
+  
   // Add each recipe to the <main> element
   addRecipesToDocument(recipes);
 }
@@ -59,6 +59,7 @@ function initializeServiceWorker() {
       console.error(`Service worker registration failed: ${error}`);
     });
   }
+  
 
   // Steps B3-B6 will be *inside* the event listener's function created in B2
   // B3. TODO - Register './sw.js' as a service worker (The MDN article
@@ -68,6 +69,9 @@ function initializeServiceWorker() {
   // B5. TODO - In the event that the service worker registration fails, console
   //            log that it has failed.
   // STEPS B6 ONWARDS WILL BE IN /sw.js
+  }
+  else{
+    console.log("Browser not supported");
   }
 }
 

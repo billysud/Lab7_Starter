@@ -50,6 +50,7 @@ self.addEventListener('fetch', function (event) {
     return cache.match(event.request).then((cachedResponse) => {
       // Return a cached response if we have one
       if (cachedResponse) {
+        console.log(cachedResponse);
         return cachedResponse;
       }
 
